@@ -1,0 +1,12 @@
+- npm init -y
+
+- npm install express
+
+- node server.js
+
+to use 'nodemon' to reboot the server whenever there is any change in the jscript server file
+- npm install -D nodemon 
+
+create script "dev": "nodemon server.js" at package.json
+
+- npm run dev / yarn dev
