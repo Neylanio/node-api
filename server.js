@@ -1,8 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const requireDir = require('require-dir');
 
 const app = express();
+
+//Free acceess to any domain
+app.use(cors());
 
 app.use(express.json());
 
