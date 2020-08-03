@@ -8,6 +8,11 @@ module.exports = {
         return response.status(200).json(products);
     },
 
+    async show(request, response){
+        const product = await Product.findById(request.params.id);
+        return response.json(product);
+    },
+
     async create(request, response){
         const product = await Product.create(request.body);
 
