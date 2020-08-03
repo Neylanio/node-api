@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/nodeapi');
 requireDir('./src/models');
 
 //Routes

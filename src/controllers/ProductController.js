@@ -22,24 +22,17 @@ module.exports = {
     async update(request, response){
 
         const { id } = request.params;
-        const { title, description, url } = request.body;
  
-        const product = await Product.find({ _id: id });
+        const product = await Product.findByIdAndUpdate(id, request.body, {new: true});
 
-        const productAux = {
-            title, description, url
-        }
-
-        console.log(productAux);
-
-        // await product.update(productAux);
-
-        return response.status(201).json(productAux);
+        return response.status(201).json(product);
 
     },
 
-    delete(request, response){
+    async delete(request, response){
+        await Product.findByIdAndRemove(request.params.id);
 
+        return response.send();
     },
     
 };
