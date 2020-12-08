@@ -30,6 +30,10 @@ module.exports = {
     async update(request, response){
 
         const { id } = request.params;
+
+        const { title, description, url } = request.body;
+
+        if( !title || !description || !url ) response.status(401).json({message: "Error, Some field is missing"});
  
         const product = await Product.findByIdAndUpdate(id, request.body, {new: true});
 
