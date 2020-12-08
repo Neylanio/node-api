@@ -17,6 +17,11 @@ module.exports = {
     },
 
     async create(request, response){
+
+        const { title, description, url } = request.body;
+
+        if( !title || !description || !url ) response.status(401).json({message: "Error, Some field is missing"});
+
         const product = await Product.create(request.body);
 
         return product ? response.status(200).json(product) : response.status(400).json({message: "Error"});

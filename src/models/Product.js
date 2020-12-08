@@ -18,6 +18,10 @@ const ProductSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    updatedAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
 ProductSchema.plugin(mongoosePaginate);

@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/nodeapi');
+mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true });
 requireDir('./src/models');
 
 //Routes
